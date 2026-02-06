@@ -18,241 +18,170 @@
         .container { 
             max-width: 900px; 
             margin: auto; 
-            padding: 100px 20px; 
+            padding: 80px 20px; 
             text-align: center;
         }
 
-        /* Profile Image Styling */
         .profile-img { 
             width: 300px; 
             height: auto; 
-            filter: grayscale(100%); /* Keeps your photo B&W */
+            filter: grayscale(100%);
             border: 1px solid #333;
             margin-bottom: 40px;
             transition: filter 0.5s ease;
         }
 
-        .profile-img:hover {
-            filter: grayscale(0%); /* Subtle color reveal on hover */
-        }
+        .profile-img:hover { filter: grayscale(0%); }
 
-        h1 { 
-            font-size: 2.5rem; 
-            letter-spacing: 5px; 
-            text-transform: uppercase; 
-            font-weight: 200;
-            margin-bottom: 10px;
-        }
+        h1 { font-size: 2.5rem; letter-spacing: 5px; text-transform: uppercase; font-weight: 200; margin-bottom: 10px; }
+        .tagline { font-size: 1rem; letter-spacing: 3px; text-transform: uppercase; color: #888; margin-bottom: 60px; }
+        .statement { font-size: 1.2rem; max-width: 700px; margin: 0 auto; color: #ccc; font-weight: 300; line-height: 2; }
+        .divider { height: 1px; width: 50px; background-color: #444; margin: 40px auto; }
 
-        .tagline { 
-            font-size: 1rem; 
-            letter-spacing: 3px; 
-            text-transform: uppercase; 
-            color: #888;
-            margin-bottom: 60px;
+        /* SLIDER CSS - THIS WAS MISSING */
+        .slider-wrapper { 
+            position: relative; 
+            width: 100%; 
+            height: 500px; 
+            overflow: hidden; 
+            background: #000;
+            margin-top: 20px;
         }
+        .slides img { 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            object-fit: contain; 
+            opacity: 0; 
+            transition: opacity 0.8s ease-in-out; 
+        }
+        .slides img.active { opacity: 1; }
 
-        .statement {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto;
-            color: #ccc;
-            font-weight: 300;
-            line-height: 2;
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.5);
+            color: white;
+            border: none;
+            padding: 15px;
+            cursor: pointer;
+            z-index: 10;
         }
+        .prev { left: 10px; }
+        .next { right: 10px; }
 
-        .divider {
-            height: 1px;
-            width: 50px;
-            background-color: #444;
-            margin: 40px auto;
-        }
+        video { margin-top: 15px; filter: grayscale(100%); transition: filter 0.5s; }
+        video:hover { filter: grayscale(0%); }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <img src="me.jpg" alt="Catherine Zhao" class="profile-img">
-        
+        <img src="me.jpeg" alt="Catherine Zhao" class="profile-img">
         <h1>Catherine Zhao</h1>
         <div class="tagline">A Filmmaker Bridging Worlds</div>
-
         <div class="divider"></div>
-
         <div class="statement">
             "My passion for cinema lies in its power to translate complex human emotions into universal images. 
-            Whether I am behind the camera or analyzing a script, I am dedicated to exploring stories that 
-            connect different cultures and perspectives."
+            Dedicated to exploring stories that connect different cultures and perspectives."
         </div>
     </div>
-    <section class="container" style="padding-top: 0;">
-    <h2 style="font-size: 1.5rem; letter-spacing: 4px; border-bottom: 1px solid #333; padding-bottom: 10px; margin-bottom: 40px;">Visual Montages (照相蒙太奇)</h2>
-    <p style="color: #888; margin-bottom: 60px; text-align: center;">
-        A narrative technique where curated still images are sequenced to create a cinematic flow. By focusing on composition and the silent space between frames, I explore how visual rhythm can tell a complete story without the need for dialogue.
-    </p>
 
-    <div class="project-card" style="margin-bottom: 100px; text-align: left;">
-        <h3 style="font-weight: 300; letter-spacing: 2px; text-transform: uppercase;">My Observer</h3>
-        <p style="color: #bbb; margin-bottom: 30px;">"A man stalks his missing girlfriend's best friend in hopes of finding a lead, only to uncover a dark and unexpected reality at the end of the trail."</p>
+    <section class="container">
+        <h2 style="font-size: 1.5rem; letter-spacing: 4px; border-bottom: 1px solid #333; padding-bottom: 10px; margin-bottom: 40px;">Visual Montages (照相蒙太奇)</h2>
         
-        <div class="slider-wrapper" id="slider1">
-            <div class="slides">
-                <img src="1mt1.jpg" class="active" alt="My Observer 1">
-                <img src="1mt2.jpg" alt="My Observer 2">
-                <img src="1mt3.jpg" alt="My Observer 3">
-                <img src="1mt4.jpg" alt="My Observer 4">
-                <img src="1mt5.jpg" alt="My Observer 5">
-                <img src="1mt6.jpg" alt="My Observer 6">
-                <img src="1mt7.jpg" alt="My Observer 7">
-                <img src="1mt8.jpg" alt="My Observer 8">
-                <img src="1mt9.jpg" alt="My Observer 9">
-                <img src="1mt10.jpg" alt="My Observer 10">
-                <img src="1mt11.jpg" alt="My Observer 11">
-                <img src="1mt12.jpg" alt="My Observer 12">
+        <div class="project-card" style="margin-bottom: 100px; text-align: left;">
+            <h3>My Observer</h3>
+            <p style="color: #bbb;">"A man stalks his missing girlfriend's best friend, only to uncover a dark reality."</p>
+            <div class="slider-wrapper" id="slider1">
+                <div class="slides">
+                    <img src="1mt1.jpeg" class="active"><img src="1mt2.jpeg"><img src="1mt3.jpeg"><img src="1mt4.jpeg"><img src="1mt5.jpeg"><img src="1mt6.jpeg">
+                    <img src="1mt7.jpeg"><img src="1mt8.jpeg"><img src="1mt9.jpeg"><img src="1mt10.jpeg"><img src="1mt11.jpeg"><img src="1mt12.jpeg">
+                </div>
+                <button class="slider-btn prev" onclick="changeSlide('slider1', -1)">&#10094;</button>
+                <button class="slider-btn next" onclick="changeSlide('slider1', 1)">&#10095;</button>
             </div>
-            <button class="slider-btn prev" onclick="changeSlide('slider1', -1)">&#10094;</button>
-            <button class="slider-btn next" onclick="changeSlide('slider1', 1)">&#10095;</button>
         </div>
-    </div>
 
-    <div class="project-card" style="margin-bottom: 100px; text-align: left;">
-        <h3 style="font-weight: 300; letter-spacing: 2px; text-transform: uppercase;">A Misunderstanding of the Wind</h3>
-        <p style="color: #bbb; margin-bottom: 30px;">"A chance encounter triggered by a runaway bookmark leads a girl to fall at first sight, only to discover that her romantic spark is met with the reality of a love that already belongs to someone else."</p>
-        
-        <div class="slider-wrapper" id="slider2">
-            <div class="slides">
-                <img src="2mt1.jpg" class="active" alt="Wind 1">
-                <img src="2mt2.jpg" alt="Wind 2">
-                <img src="2mt3.jpg" alt="Wind 3">
-                <img src="2mt4.jpg" alt="Wind 4">
-                <img src="2mt5.jpg" alt="Wind 5">
-                <img src="2mt6.jpg" alt="Wind 6">
-                <img src="2mt7.jpg" alt="Wind 7">
-                <img src="2mt8.jpg" alt="Wind 8">
-                <img src="2mt9.jpg" alt="Wind 9">
-                <img src="2mt10.jpg" alt="Wind 10">
+        <div class="project-card" style="margin-bottom: 100px; text-align: left;">
+            <h3>A Misunderstanding of the Wind</h3>
+            <div class="slider-wrapper" id="slider2">
+                <div class="slides">
+                    <img src="2mt1.jpeg" class="active"><img src="2mt2.jpeg"><img src="2mt3.jpeg"><img src="2mt4.jpeg"><img src="2mt5.jpeg">
+                    <img src="2mt6.jpeg"><img src="2mt7.jpeg"><img src="2mt8.jpeg"><img src="2mt9.jpeg"><img src="2mt10.jpeg">
+                </div>
+                <button class="slider-btn prev" onclick="changeSlide('slider2', -1)">&#10094;</button>
+                <button class="slider-btn next" onclick="changeSlide('slider2', 1)">&#10095;</button>
             </div>
-            <button class="slider-btn prev" onclick="changeSlide('slider2', -1)">&#10094;</button>
-            <button class="slider-btn next" onclick="changeSlide('slider2', 1)">&#10095;</button>
         </div>
-    </div>
-</section>
-<section class="container" style="padding-top: 0;">
-    <h2 style="font-size: 1.5rem; letter-spacing: 4px; border-bottom: 1px solid #333; padding-bottom: 10px; margin-bottom: 40px;">Performance Highlights</h2>
+    </section>
 
-    <div class="project-card" style="margin-bottom: 100px; text-align: left;">
-        <h3 style="font-weight: 300; letter-spacing: 2px; text-transform: uppercase;">Crazy Rich Asians: A Reimagined Adaptation</h3>
-        <p style="color: #888; font-weight: bold; font-size: 0.85rem; margin-bottom: 10px; text-transform: uppercase;">Role: Polyn (Housekeeper)</p>
-        <p style="color: #bbb; margin-bottom: 30px;">
-            "This performance piece is a creative reimagining of the global hit, shifted to explore the narrative through the mother’s point of view. I portrayed Polyn, the Yang family’s dedicated housekeeper. In this role, I focused on bringing a vibrant, kind-hearted, and energetic spirit to the screen, serving as a vital emotional pulse within the complex world of the Yang household."
-        </p>
-        
-        <div class="slider-wrapper" id="slider3">
-            <div class="slides">
-                <img src="crazyrichasian1.jpg" class="active" alt="Crazy Rich Asians 1">
-                <img src="crazyrichasian2.jpg" alt="Crazy Rich Asians 2">
-                <img src="crazyrichasian3.jpg" alt="Crazy Rich Asians 3">
-                <img src="crazyrichasian4.jpg" alt="Crazy Rich Asians 4">
+    <section class="container">
+        <h2 style="font-size: 1.5rem; letter-spacing: 4px; border-bottom: 1px solid #333; padding-bottom: 10px; margin-bottom: 40px;">Performance Highlights</h2>
+        <div class="project-card" style="text-align: left;">
+            <h3>Crazy Rich Asians: Reimagined</h3>
+            <div class="slider-wrapper" id="slider3">
+                <div class="slides">
+                    <img src="crazyrichasian1.jpeg" class="active"><img src="crazyrichasian2.jpeg"><img src="crazyrichasian3.jpeg"><img src="crazyrichasian4.jpeg">
+                </div>
+                <button class="slider-btn prev" onclick="changeSlide('slider3', -1)">&#10094;</button>
+                <button class="slider-btn next" onclick="changeSlide('slider3', 1)">&#10095;</button>
             </div>
-            <button class="slider-btn prev" onclick="changeSlide('slider3', -1)">&#10094;</button>
-            <button class="slider-btn next" onclick="changeSlide('slider3', 1)">&#10095;</button>
         </div>
-    </div>
-    <section class="container" style="padding-top: 0;">
-    <h2 style="font-size: 1.5rem; letter-spacing: 4px; border-bottom: 1px solid #333; padding-bottom: 10px; margin-bottom: 40px;">Film Works</h2>
+    </section>
 
-    <div class="project-card" style="margin-bottom: 80px; text-align: left;">
-        <h3 style="font-weight: 300; letter-spacing: 2px; text-transform: uppercase;">Sober (清醒梦)</h3>
-        <p style="color: #bbb; margin-bottom: 25px;">A poignant short film exploring the delicate process of healing after loss.</p>
-        <video width="100%" controls style="filter: grayscale(100%); border: 1px solid #222;">
-            <source src="sober.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div>
+    <section class="container">
+        <h2 style="font-size: 1.5rem; letter-spacing: 4px; border-bottom: 1px solid #333; padding-bottom: 10px; margin-bottom: 40px;">Film Works</h2>
+        <div class="project-card" style="margin-bottom: 60px; text-align: left;">
+            <h3>Sober (清醒梦)</h3>
+            <video width="100%" controls><source src="sober.MP4" type="video/mp4"></video>
+        </div>
+        <div class="project-card" style="margin-bottom: 60px; text-align: left;">
+            <h3>Solitude (孤独)</h3>
+            <video width="100%" controls><source src="solitude.mp4" type="video/mp4"></video>
+        </div>
+    </section>
 
-    <div class="project-card" style="margin-bottom: 80px; text-align: left;">
-        <h3 style="font-weight: 300; letter-spacing: 2px; text-transform: uppercase;">Solitude (孤独)</h3>
-        <p style="color: #bbb; margin-bottom: 25px;">A melancholic exploration of "crowded loneliness" within social circles.</p>
-        <video width="100%" controls style="filter: grayscale(100%); border: 1px solid #222;">
-            <source src="solitude.mp4" type="video/mp4">
-        </video>
-    </div>
-
-    <div class="project-card" style="margin-bottom: 100px; text-align: left;">
-        <h3 style="font-weight: 300; letter-spacing: 2px; text-transform: uppercase;">The Holy Spirits</h3>
-        <p style="color: #f39c12; font-weight: bold; font-size: 0.85rem; margin-bottom: 5px; text-transform: uppercase;">Role: Kate</p>
-        <p style="color: #bbb; margin-bottom: 25px;">A comedic short film exploring the infectious energy and loyalty of friendship.</p>
-        <video width="100%" controls style="filter: grayscale(100%); border: 1px solid #222;">
-            <source src="holyspirits.mp4" type="video/mp4">
-        </video>
-    </div>
-
-    <h2 style="font-size: 1.5rem; letter-spacing: 4px; border-bottom: 1px solid #333; padding-bottom: 10px; margin-bottom: 40px;">Works in Progress</h2>
-    <div class="project-card" style="text-align: left;">
-        <h3 style="font-weight: 300; letter-spacing: 2px; text-transform: uppercase;">Le ciel te regarde</h3>
-        <p style="color: #888; margin-bottom: 25px;"><em>Currently in Post-Production</em>. A visual meditation on eternal love and reincarnation.</p>
-        
-        <div class="slider-wrapper" id="slider5">
-            <div class="slides">
-                <img src="sky1.jpg" class="active" alt="Sky 1">
-                <img src="sky2.jpg" alt="Sky 2">
-                <img src="sky3.jpg" alt="Sky 3">
+    <section class="container">
+        <h2 style="font-size: 1.5rem; letter-spacing: 4px; border-bottom: 1px solid #333; padding-bottom: 10px; margin-bottom: 40px;">Works in Progress</h2>
+        <div class="project-card" style="text-align: left;">
+            <h3>Le ciel te regarde</h3>
+            <div class="slider-wrapper" id="slider5">
+                <div class="slides">
+                    <img src="sky1.jpeg" class="active"><img src="sky2.jpeg"><img src="sky3.jpeg">
+                </div>
+                <button class="slider-btn prev" onclick="changeSlide('slider5', -1)">&#10094;</button>
+                <button class="slider-btn next" onclick="changeSlide('slider5', 1)">&#10095;</button>
             </div>
-            <button class="slider-btn prev" onclick="changeSlide('slider5', -1)">&#10094;</button>
-            <button class="slider-btn next" onclick="changeSlide('slider5', 1)">&#10095;</button>
         </div>
-   <footer style="text-align: center; padding: 60px 0; color: #444; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase;">
+    </section>
+
+    <section class="container">
+        <h2 style="font-size: 1.5rem; letter-spacing: 4px; border-bottom: 1px solid #333; padding-bottom: 10px; margin-bottom: 40px;">My BFA Dream</h2>
+        <video width="100%" controls><source src="bfadream.mp4" type="video/mp4"></video>
+    </section>
+
+    <footer style="text-align: center; padding: 60px 0; color: #444; font-size: 0.8rem; letter-spacing: 2px;">
         &copy; 2026 Catherine Zhao | Beijing Film Academy
     </footer>
-</div>
 
-<script>
-    function changeSlide(sliderId, direction) {
-        const slider = document.getElementById(sliderId);
-        if (!slider) return;
-        
-        const images = slider.getElementsByTagName('img');
-        let activeIndex = 0;
-
-        for (let i = 0; i < images.length; i++) {
-            if (images[i].classList.contains('active')) {
-                activeIndex = i;
-                images[i].classList.remove('active');
-                break;
-            }
+    <script>
+        function changeSlide(sliderId, direction) {
+            const slider = document.getElementById(sliderId);
+            const images = slider.querySelectorAll('img');
+            let activeIndex = Array.from(images).findIndex(img => img.classList.contains('active'));
+            
+            images[activeIndex].classList.remove('active');
+            activeIndex = (activeIndex + direction + images.length) % images.length;
+            images[activeIndex].classList.add('active');
         }
 
-        let nextIndex = (activeIndex + direction + images.length) % images.length;
-        images[nextIndex].classList.add('active');
-    }
-
-    // Auto-slide every 4 seconds for all 5 project sliders
-    setInterval(() => {
-        const sliders = ['slider1', 'slider2', 'slider3', 'slider4', 'slider5'];
-        sliders.forEach(id => {
-            if (document.getElementById(id)) {
-                changeSlide(id, 1);
-            }
-        });
-    }, 4000);
-    <section class="container" style="padding-top: 0;">
-    <h2 style="font-size: 1.5rem; letter-spacing: 4px; border-bottom: 1px solid #333; padding-bottom: 10px; margin-bottom: 40px;">My BFA Dream</h2>
-    
-    <div class="project-card" style="margin-bottom: 80px; text-align: left;">
-        <p style="color: #bbb; margin-bottom: 25px; line-height: 2;">
-            As a student at the <strong>Beijing Film Academy</strong>, my journey is defined by the intersection of tradition and innovation. 
-            This video captures my evolution as a filmmaker—exploring the visual language that bridges my roots in Canada with the 
-            vibrant cinematic culture of China. It is a testament to my dedication to the craft and my pursuit of stories that 
-            resonate on a global scale.
-        </p>
-        
-        <video width="100%" controls style="filter: grayscale(100%); border: 1px solid #222; transition: filter 0.5s ease;">
-            <source src="bfadream.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div>
-</section>
-</script>
-
+        setInterval(() => {
+            ['slider1', 'slider2', 'slider3', 'slider5'].forEach(id => changeSlide(id, 1));
+        }, 4000);
+    </script>
 </body>
 </html>
