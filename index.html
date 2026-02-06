@@ -85,12 +85,14 @@
             connect different cultures and perspectives."
         </div>
     </div>
-<section class="container" style="padding-top: 0;">
+    <section class="container" style="padding-top: 0;">
     <h2 style="font-size: 1.5rem; letter-spacing: 4px; border-bottom: 1px solid #333; padding-bottom: 10px; margin-bottom: 40px;">Visual Montages (照相蒙太奇)</h2>
-    <p style="color: #888; margin-bottom: 60px;">A narrative technique where curated still images are sequenced to create a cinematic flow. By focusing on composition and the silent space between frames, I explore how visual rhythm can tell a complete story without the need for dialogue.</p>
+    <p style="color: #888; margin-bottom: 60px; text-align: center;">
+        A narrative technique where curated still images are sequenced to create a cinematic flow. By focusing on composition and the silent space between frames, I explore how visual rhythm can tell a complete story without the need for dialogue.
+    </p>
 
-    <div class="project-card" style="margin-bottom: 100px;">
-        <h3 style="font-weight: 300; letter-spacing: 2px;">My Observer</h3>
+    <div class="project-card" style="margin-bottom: 100px; text-align: left;">
+        <h3 style="font-weight: 300; letter-spacing: 2px; text-transform: uppercase;">My Observer</h3>
         <p style="color: #bbb; margin-bottom: 30px;">"A man stalks his missing girlfriend's best friend in hopes of finding a lead, only to uncover a dark and unexpected reality at the end of the trail."</p>
         
         <div class="slider-wrapper" id="slider1">
@@ -113,8 +115,8 @@
         </div>
     </div>
 
-    <div class="project-card">
-        <h3 style="font-weight: 300; letter-spacing: 2px;">A Misunderstanding of the Wind</h3>
+    <div class="project-card" style="margin-bottom: 100px; text-align: left;">
+        <h3 style="font-weight: 300; letter-spacing: 2px; text-transform: uppercase;">A Misunderstanding of the Wind</h3>
         <p style="color: #bbb; margin-bottom: 30px;">"A chance encounter triggered by a runaway bookmark leads a girl to fall at first sight, only to discover that her romantic spark is met with the reality of a love that already belongs to someone else."</p>
         
         <div class="slider-wrapper" id="slider2">
@@ -135,20 +137,80 @@
         </div>
     </div>
 </section>
+<section class="container" style="padding-top: 0;">
+    <h2 style="font-size: 1.5rem; letter-spacing: 4px; border-bottom: 1px solid #333; padding-bottom: 10px; margin-bottom: 40px;">Performance Highlights</h2>
 
-<style>
-    .slider-wrapper { position: relative; width: 100%; height: 500px; overflow: hidden; background: #000; border: 1px solid #222; }
-    .slides img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; opacity: 0; transition: opacity 0.8s ease-in-out; filter: grayscale(100%); }
-    .slides img.active { opacity: 1; }
-    .slider-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.1); color: white; border: none; padding: 15px; cursor: pointer; font-size: 1.5rem; transition: 0.3s; z-index: 10; }
-    .slider-btn:hover { background: rgba(255,255,255,0.3); }
-    .prev { left: 0; }
-    .next { right: 0; }
-</style>
+    <div class="project-card" style="margin-bottom: 100px; text-align: left;">
+        <h3 style="font-weight: 300; letter-spacing: 2px; text-transform: uppercase;">Crazy Rich Asians: A Reimagined Adaptation</h3>
+        <p style="color: #888; font-weight: bold; font-size: 0.85rem; margin-bottom: 10px; text-transform: uppercase;">Role: Polyn (Housekeeper)</p>
+        <p style="color: #bbb; margin-bottom: 30px;">
+            "This performance piece is a creative reimagining of the global hit, shifted to explore the narrative through the mother’s point of view. I portrayed Polyn, the Yang family’s dedicated housekeeper. In this role, I focused on bringing a vibrant, kind-hearted, and energetic spirit to the screen, serving as a vital emotional pulse within the complex world of the Yang household."
+        </p>
+        
+        <div class="slider-wrapper" id="slider3">
+            <div class="slides">
+                <img src="crazyrichasian1.jpg" class="active" alt="Crazy Rich Asians 1">
+                <img src="crazyrichasian2.jpg" alt="Crazy Rich Asians 2">
+                <img src="crazyrichasian3.jpg" alt="Crazy Rich Asians 3">
+                <img src="crazyrichasian4.jpg" alt="Crazy Rich Asians 4">
+            </div>
+            <button class="slider-btn prev" onclick="changeSlide('slider3', -1)">&#10094;</button>
+            <button class="slider-btn next" onclick="changeSlide('slider3', 1)">&#10095;</button>
+        </div>
+    </div>
+    <section class="container" style="padding-top: 0;">
+    <h2 style="font-size: 1.5rem; letter-spacing: 4px; border-bottom: 1px solid #333; padding-bottom: 10px; margin-bottom: 40px;">Film Works</h2>
+
+    <div class="project-card" style="margin-bottom: 80px; text-align: left;">
+        <h3 style="font-weight: 300; letter-spacing: 2px; text-transform: uppercase;">Sober (清醒梦)</h3>
+        <p style="color: #bbb; margin-bottom: 25px;">A poignant short film exploring the delicate process of healing after loss.</p>
+        <video width="100%" controls style="filter: grayscale(100%); border: 1px solid #222;">
+            <source src="sober.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <div class="project-card" style="margin-bottom: 80px; text-align: left;">
+        <h3 style="font-weight: 300; letter-spacing: 2px; text-transform: uppercase;">Solitude (孤独)</h3>
+        <p style="color: #bbb; margin-bottom: 25px;">A melancholic exploration of "crowded loneliness" within social circles.</p>
+        <video width="100%" controls style="filter: grayscale(100%); border: 1px solid #222;">
+            <source src="solitude.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="project-card" style="margin-bottom: 100px; text-align: left;">
+        <h3 style="font-weight: 300; letter-spacing: 2px; text-transform: uppercase;">The Holy Spirits</h3>
+        <p style="color: #f39c12; font-weight: bold; font-size: 0.85rem; margin-bottom: 5px; text-transform: uppercase;">Role: Kate</p>
+        <p style="color: #bbb; margin-bottom: 25px;">A comedic short film exploring the infectious energy and loyalty of friendship.</p>
+        <video width="100%" controls style="filter: grayscale(100%); border: 1px solid #222;">
+            <source src="holyspirits.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <h2 style="font-size: 1.5rem; letter-spacing: 4px; border-bottom: 1px solid #333; padding-bottom: 10px; margin-bottom: 40px;">Works in Progress</h2>
+    <div class="project-card" style="text-align: left;">
+        <h3 style="font-weight: 300; letter-spacing: 2px; text-transform: uppercase;">Le ciel te regarde</h3>
+        <p style="color: #888; margin-bottom: 25px;"><em>Currently in Post-Production</em>. A visual meditation on eternal love and reincarnation.</p>
+        
+        <div class="slider-wrapper" id="slider5">
+            <div class="slides">
+                <img src="sky1.jpg" class="active" alt="Sky 1">
+                <img src="sky2.jpg" alt="Sky 2">
+                <img src="sky3.jpg" alt="Sky 3">
+            </div>
+            <button class="slider-btn prev" onclick="changeSlide('slider5', -1)">&#10094;</button>
+            <button class="slider-btn next" onclick="changeSlide('slider5', 1)">&#10095;</button>
+        </div>
+   <footer style="text-align: center; padding: 60px 0; color: #444; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase;">
+        &copy; 2026 Catherine Zhao | Beijing Film Academy
+    </footer>
+</div>
 
 <script>
     function changeSlide(sliderId, direction) {
         const slider = document.getElementById(sliderId);
+        if (!slider) return;
+        
         const images = slider.getElementsByTagName('img');
         let activeIndex = 0;
 
@@ -160,18 +222,20 @@
             }
         }
 
-        let nextIndex = activeIndex + direction;
-        if (nextIndex >= images.length) nextIndex = 0;
-        if (nextIndex < 0) nextIndex = images.length - 1;
-
+        let nextIndex = (activeIndex + direction + images.length) % images.length;
         images[nextIndex].classList.add('active');
     }
 
-    // Auto-slide every 4 seconds
+    // Auto-slide every 4 seconds for all 5 project sliders
     setInterval(() => {
-        changeSlide('slider1', 1);
-        changeSlide('slider2', 1);
+        const sliders = ['slider1', 'slider2', 'slider3', 'slider4', 'slider5'];
+        sliders.forEach(id => {
+            if (document.getElementById(id)) {
+                changeSlide(id, 1);
+            }
+        });
     }, 4000);
 </script>
+
 </body>
 </html>
