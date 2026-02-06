@@ -22,6 +22,7 @@
             text-align: center;
         }
 
+        /* Profile Image Styling */
         .profile-img { 
             width: 300px; 
             height: auto; 
@@ -30,7 +31,6 @@
             margin-bottom: 40px;
             transition: filter 0.5s ease;
         }
-
         .profile-img:hover { filter: grayscale(0%); }
 
         h1 { font-size: 2.5rem; letter-spacing: 5px; text-transform: uppercase; font-weight: 200; margin-bottom: 10px; }
@@ -38,7 +38,7 @@
         .statement { font-size: 1.2rem; max-width: 700px; margin: 0 auto; color: #ccc; font-weight: 300; line-height: 2; }
         .divider { height: 1px; width: 50px; background-color: #444; margin: 40px auto; }
 
-        /* SLIDER CSS - THIS WAS MISSING */
+        /* Slider Styling */
         .slider-wrapper { 
             position: relative; 
             width: 100%; 
@@ -73,7 +73,15 @@
         .prev { left: 10px; }
         .next { right: 10px; }
 
-        video { margin-top: 15px; filter: grayscale(100%); transition: filter 0.5s; }
+        /* VIDEO CONTROL FIXES */
+        video { 
+            margin-top: 15px; 
+            filter: grayscale(100%); 
+            transition: filter 0.5s; 
+            pointer-events: auto !important; /* Forces controls to be clickable */
+            position: relative;
+            z-index: 5;
+        }
         video:hover { filter: grayscale(0%); }
     </style>
 </head>
@@ -95,7 +103,6 @@
         
         <div class="project-card" style="margin-bottom: 100px; text-align: left;">
             <h3>My Observer</h3>
-            <p style="color: #bbb;">"A man stalks his missing girlfriend's best friend, only to uncover a dark reality."</p>
             <div class="slider-wrapper" id="slider1">
                 <div class="slides">
                     <img src="1mt1.jpeg" class="active"><img src="1mt2.jpeg"><img src="1mt3.jpeg"><img src="1mt4.jpeg"><img src="1mt5.jpeg"><img src="1mt6.jpeg">
@@ -137,11 +144,15 @@
         <h2 style="font-size: 1.5rem; letter-spacing: 4px; border-bottom: 1px solid #333; padding-bottom: 10px; margin-bottom: 40px;">Film Works</h2>
         <div class="project-card" style="margin-bottom: 60px; text-align: left;">
             <h3>Sober (清醒梦)</h3>
-            <video width="100%" controls><source src="sober.MP4" type="video/mp4"></video>
+            <video width="100%" controls preload="metadata">
+                <source src="sober.MP4" type="video/mp4">
+            </video>
         </div>
         <div class="project-card" style="margin-bottom: 60px; text-align: left;">
             <h3>Solitude (孤独)</h3>
-            <video width="100%" controls><source src="solitude.mp4" type="video/mp4"></video>
+            <video width="100%" controls preload="metadata">
+                <source src="solitude.mp4" type="video/mp4">
+            </video>
         </div>
     </section>
 
@@ -161,7 +172,9 @@
 
     <section class="container">
         <h2 style="font-size: 1.5rem; letter-spacing: 4px; border-bottom: 1px solid #333; padding-bottom: 10px; margin-bottom: 40px;">My BFA Dream</h2>
-        <video width="100%" controls><source src="bfadream.mp4" type="video/mp4"></video>
+        <video width="100%" controls preload="metadata">
+            <source src="bfadream).mp4" type="video/mp4">
+        </video>
     </section>
 
     <footer style="text-align: center; padding: 60px 0; color: #444; font-size: 0.8rem; letter-spacing: 2px;">
@@ -171,6 +184,7 @@
     <script>
         function changeSlide(sliderId, direction) {
             const slider = document.getElementById(sliderId);
+            if (!slider) return;
             const images = slider.querySelectorAll('img');
             let activeIndex = Array.from(images).findIndex(img => img.classList.contains('active'));
             
@@ -180,7 +194,9 @@
         }
 
         setInterval(() => {
-            ['slider1', 'slider2', 'slider3', 'slider5'].forEach(id => changeSlide(id, 1));
+            ['slider1', 'slider2', 'slider3', 'slider5'].forEach(id => {
+                if(document.getElementById(id)) changeSlide(id, 1);
+            });
         }, 4000);
     </script>
 </body>
