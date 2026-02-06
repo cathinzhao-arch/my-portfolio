@@ -85,6 +85,93 @@
             connect different cultures and perspectives."
         </div>
     </div>
+<section class="container" style="padding-top: 0;">
+    <h2 style="font-size: 1.5rem; letter-spacing: 4px; border-bottom: 1px solid #333; padding-bottom: 10px; margin-bottom: 40px;">Visual Montages (照相蒙太奇)</h2>
+    <p style="color: #888; margin-bottom: 60px;">A narrative technique where curated still images are sequenced to create a cinematic flow. By focusing on composition and the silent space between frames, I explore how visual rhythm can tell a complete story without the need for dialogue.</p>
 
+    <div class="project-card" style="margin-bottom: 100px;">
+        <h3 style="font-weight: 300; letter-spacing: 2px;">My Observer</h3>
+        <p style="color: #bbb; margin-bottom: 30px;">"A man stalks his missing girlfriend's best friend in hopes of finding a lead, only to uncover a dark and unexpected reality at the end of the trail."</p>
+        
+        <div class="slider-wrapper" id="slider1">
+            <div class="slides">
+                <img src="1mt1.jpg" class="active" alt="My Observer 1">
+                <img src="1mt2.jpg" alt="My Observer 2">
+                <img src="1mt3.jpg" alt="My Observer 3">
+                <img src="1mt4.jpg" alt="My Observer 4">
+                <img src="1mt5.jpg" alt="My Observer 5">
+                <img src="1mt6.jpg" alt="My Observer 6">
+                <img src="1mt7.jpg" alt="My Observer 7">
+                <img src="1mt8.jpg" alt="My Observer 8">
+                <img src="1mt9.jpg" alt="My Observer 9">
+                <img src="1mt10.jpg" alt="My Observer 10">
+                <img src="1mt11.jpg" alt="My Observer 11">
+                <img src="1mt12.jpg" alt="My Observer 12">
+            </div>
+            <button class="slider-btn prev" onclick="changeSlide('slider1', -1)">&#10094;</button>
+            <button class="slider-btn next" onclick="changeSlide('slider1', 1)">&#10095;</button>
+        </div>
+    </div>
+
+    <div class="project-card">
+        <h3 style="font-weight: 300; letter-spacing: 2px;">A Misunderstanding of the Wind</h3>
+        <p style="color: #bbb; margin-bottom: 30px;">"A chance encounter triggered by a runaway bookmark leads a girl to fall at first sight, only to discover that her romantic spark is met with the reality of a love that already belongs to someone else."</p>
+        
+        <div class="slider-wrapper" id="slider2">
+            <div class="slides">
+                <img src="2mt1.jpg" class="active" alt="Wind 1">
+                <img src="2mt2.jpg" alt="Wind 2">
+                <img src="2mt3.jpg" alt="Wind 3">
+                <img src="2mt4.jpg" alt="Wind 4">
+                <img src="2mt5.jpg" alt="Wind 5">
+                <img src="2mt6.jpg" alt="Wind 6">
+                <img src="2mt7.jpg" alt="Wind 7">
+                <img src="2mt8.jpg" alt="Wind 8">
+                <img src="2mt9.jpg" alt="Wind 9">
+                <img src="2mt10.jpg" alt="Wind 10">
+            </div>
+            <button class="slider-btn prev" onclick="changeSlide('slider2', -1)">&#10094;</button>
+            <button class="slider-btn next" onclick="changeSlide('slider2', 1)">&#10095;</button>
+        </div>
+    </div>
+</section>
+
+<style>
+    .slider-wrapper { position: relative; width: 100%; height: 500px; overflow: hidden; background: #000; border: 1px solid #222; }
+    .slides img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; opacity: 0; transition: opacity 0.8s ease-in-out; filter: grayscale(100%); }
+    .slides img.active { opacity: 1; }
+    .slider-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.1); color: white; border: none; padding: 15px; cursor: pointer; font-size: 1.5rem; transition: 0.3s; z-index: 10; }
+    .slider-btn:hover { background: rgba(255,255,255,0.3); }
+    .prev { left: 0; }
+    .next { right: 0; }
+</style>
+
+<script>
+    function changeSlide(sliderId, direction) {
+        const slider = document.getElementById(sliderId);
+        const images = slider.getElementsByTagName('img');
+        let activeIndex = 0;
+
+        for (let i = 0; i < images.length; i++) {
+            if (images[i].classList.contains('active')) {
+                activeIndex = i;
+                images[i].classList.remove('active');
+                break;
+            }
+        }
+
+        let nextIndex = activeIndex + direction;
+        if (nextIndex >= images.length) nextIndex = 0;
+        if (nextIndex < 0) nextIndex = images.length - 1;
+
+        images[nextIndex].classList.add('active');
+    }
+
+    // Auto-slide every 4 seconds
+    setInterval(() => {
+        changeSlide('slider1', 1);
+        changeSlide('slider2', 1);
+    }, 4000);
+</script>
 </body>
 </html>
